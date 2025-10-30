@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakshish's Google Ambassador Dream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(120deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            background-size: 300% 300%;
+            animation: gradient 8s ease infinite;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .google-logo {
+            font-family: 'Baloo 2', cursive;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .google-logo span:nth-child(1) { color: #4285F4; }
+        .google-logo span:nth-child(2) { color: #EA4335; }
+        .google-logo span:nth-child(3) { color: #FBBC05; }
+        .google-logo span:nth-child(4) { color: #4285F4; }
+        .google-logo span:nth-child(5) { color: #34A853; }
+        .google-logo span:nth-child(6) { color: #EA4335; }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #fff;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .comic-strip {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .panel-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #4285F4;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .panel-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .panel-text {
+            flex: 1;
+        }
+        
+        .panel-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .panel-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #4285F4;
+            font-family: 'Baloo 2', cursive;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .dream-image {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .dream-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .caption {
+            margin-top: 15px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .funny-questions {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .questions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .question-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+            border-left: 4px solid #4285F4;
+        }
+        
+        .question-card:hover {
+            transform: translateY(-5px);
+            background: #e8f0fe;
+        }
+        
+        .question-card h3 {
+            color: #4285F4;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background: #333;
+            color: white;
+            border-radius: 20px 20px 0 0;
+            margin-top: 40px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #FBBC05, #FBBC05);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .thought-bubble {
+            position: relative;
+            background: #e8f0fe;
+            padding: 15px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border: 2px dashed #4285F4;
+        }
+        
+        .thought-bubble:before {
+            content: "";
+            position: absolute;
+            left: -15px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 15px solid #e8f0fe;
+        }
+        
+        @media (max-width: 768px) {
+            .panel-content {
+                flex-direction: column;
+            }
+            
+            .google-logo {
+                font-size: 2.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .final-image {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .final-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-height: 500px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="google-logo">
+                <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+            </div>
+            <h1>Student Ambassador Program</h1>
+            <p class="subtitle">Bakshish's journey from dream to reality</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="comic-strip">
+            <div class="panel fade-in">
+                <div class="panel-number">1</div>
+                <div class="panel-content">
+                    <div class="panel-text">
+                        <h2>The First Glimpse</h2>
+                        <p>Once upon a time, a little girl named <span class="highlight">Bakshish</span> saw the colorful Google logo for the first time on her father's computer screen. The vibrant colors and playful letters captured her imagination instantly.</p>
+                        <div class="thought-bubble">
+                            "Wow! What is this magical thing? It has all the answers! I want to be part of this someday!"
+                        </div>
+                        <p>That day, a dream was born in her heart - a dream to one day be part of the Google family.</p>
+                    </div>
+                    <div class="panel-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/14/04/36/boy-1822559_1280.png" alt="Bakshish dreaming">
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel fade-in">
+                <div class="panel-number">2</div>
+                <div class="panel-content">
+                    <div class="panel-image">
+                        <img src="https://cdn.pixabay.com/photo/2018/09/27/14/42/background-3707294_1280.jpg" alt="Bakshish learning to code">
+                    </div>
+                    <div class="panel-text">
+                        <h2>The Learning Journey</h2>
+                        <p>As <span class="highlight">Bakshish</span> grew older, her curiosity about technology grew with her. She spent countless hours learning to code, designing websites, and understanding how the digital world works.</p>
+                        <p>She discovered that Google wasn't just a search engine - it was a universe of innovation, creativity, and endless possibilities.</p>
+                        <p>Her favorite question became: <span class="highlight">"How can I make technology more accessible to everyone?"</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel fade-in">
+                <div class="panel-number">3</div>
+                <div class="panel-content">
+                    <div class="panel-text">
+                        <h2>The Discovery</h2>
+                        <p>One day, while researching tech communities, <span class="highlight">Bakshish</span> stumbled upon the Google Student Ambassador Program. Her eyes widened as she read about the opportunity to represent Google on her campus.</p>
+                        <div class="thought-bubble">
+                            "This is it! This is my chance to be part of the Google ecosystem while still in college!"
+                        </div>
+                        <p>She immediately started preparing her application, pouring her heart and soul into every word.</p>
+                    </div>
+                    <div class="panel-image">
+                        <img src="https://cdn.pixabay.com/photo/2018/05/18/15/30/web-design-3411373_1280.jpg" alt="Person researching on laptop">
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel fade-in">
+                <div class="panel-number">4</div>
+                <div class="panel-content">
+                    <div class="panel-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg" alt="Team collaboration">
+                    </div>
+                    <div class="panel-text">
+                        <h2>The Vision</h2>
+                        <p><span class="highlight">Bakshish</span> envisioned herself as a Google Student Ambassador - organizing tech events, mentoring peers, and bridging the gap between students and industry experts.</p>
+                        <p>She imagined creating a campus community where everyone felt empowered to explore technology, regardless of their background.</p>
+                        <p>Her guiding question: <span class="highlight">"How can I inspire others the way Google inspired me?"</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-image fade-in">
+            <h2>The Dream Realized</h2>
+            <p>This image represents the culmination of <span class="highlight">Bakshish's</span> journey - the moment her childhood dream becomes a tangible goal.</p>
+            <img src="WhatsApp Image 2025-10-30 at 10.56.17 PM.jpeg" alt="Bakshish's Google Ambassador Dream">
+            <p class="caption">The dream that started with a colorful logo now has a clear path forward</p>
+        </div>
+
+        <div class="funny-questions fade-in">
+            <h2>Funny Questions I'd Ask as a Google Ambassador</h2>
+            <p>If selected, here are some lighthearted questions I'd use to break the ice at campus events:</p>
+            
+            <div class="questions-grid">
+                <div class="question-card">
+                    <h3>Tech Confessions</h3>
+                    <p>"Be honest, how many tabs do you currently have open? And do you actually remember what's in all of them?"</p>
+                </div>
+                
+                <div class="question-card">
+                    <h3>Google Doodle Dreams</h3>
+                    <p>"If you could create a Google Doodle about your life, what would it look like and why?"</p>
+                </div>
+                
+                <div class="question-card">
+                    <h3>Search History Secrets</h3>
+                    <p>"What's the weirdest thing you've ever Googled at 2 AM when you couldn't sleep?"</p>
+                </div>
+                
+                <div class="question-card">
+                    <h3>Robot Takeover</h3>
+                    <p>"If AI took over the world but promised to keep one Google service running, which would you choose and why?"</p>
+                </div>
+                
+                <div class="question-card">
+                    <h3>Campus Tech Superpower</h3>
+                    <p>"If you could invent one tech solution to solve a campus problem, what would it be?"</p>
+                </div>
+                
+                <div class="question-card">
+                    <h3>Google Colors Personality</h3>
+                    <p>"Which Google color (blue, red, yellow, green) best represents your personality today and why?"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>This website is a creative representation of <span class="highlight">Bakshish's</span> passion for technology and her dream to become a Google Student Ambassador.</p>
+            <p>Thank you for considering my application! It would be an honor to represent Google on campus.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fade in animation for elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Add some interactive elements
+            const questionCards = document.querySelectorAll('.question-card');
+            questionCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+            });
+            
+            // Add a fun confetti effect when clicking the header
+            const header = document.querySelector('header');
+            header.addEventListener('click', function() {
+                createConfetti();
+            });
+            
+            function createConfetti() {
+                const colors = ['#4285F4', '#34A853', '#FBBC05', '#EA4335'];
+                const confettiCount = 50;
+                
+                for (let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.zIndex = '9999';
+                    confetti.style.pointerEvents = 'none';
+                    document.body.appendChild(confetti);
+                    
+                    const animation = confetti.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                        { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: 1000 + Math.random() * 2000,
+                        easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+                    });
+                    
+                    animation.onfinish = () => {
+                        confetti.remove();
+                    };
+                }
+            }
+        });
+    </script>
+</body>
+</html>
